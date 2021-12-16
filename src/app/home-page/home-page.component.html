@@ -1,0 +1,26 @@
+<div class="cadre" *ngIf="weather || error">
+    <div *ngIf="weather && !error">
+        <p class="text-center ville">
+            {{weather.name}}
+        </p>
+        <p class="text-center temps">
+            {{weather.weather[0].description}}
+        </p>
+        <div class="icone-container">
+            <img src="http://openweathermap.org/img/wn/{{weather.weather[0].icon}}@2x.png" />
+        </div>
+        <p class="text-center temperature">
+            {{weather.main.temp}}°
+        </p>
+        <div class="previsions text-center">
+            <b>Min. {{weather.main.temp_min}}°</b>
+            <b>Max. {{weather.main.temp_max}}°</b>
+        </div>
+        <p class="text-center ressenti">Température ressentie :{{weather.main.feels_like}}°</p>
+    </div>
+    <div *ngIf="error">
+        <p class="text-center">
+            La vile n'a pas pu être trouvée.
+        </p>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<main>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Ville</th>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Température</th>
+                <th>Température min</th>
+                <th>Température max</th>
+                <th>Température ressentie</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let h of histories">
+                <td>
+                    <img src="http://openweathermap.org/img/wn/{{h.weather.weather[0].icon}}@2x.png" />
+                </td>
+                <td>
+                    {{ h.weather.name }}
+                </td>
+                <td>
+                    {{ h.date | date: 'dd/MM/yyyy à H:mm' }}
+                </td>
+                <td>
+                    {{h.weather.weather[0].description}}
+                </td>
+                <td>
+                    {{h.weather.main.temp}}°
+                </td>
+                <td>
+                    {{h.weather.main.temp_min}}°
+                </td>
+                <td>
+                    {{h.weather.main.temp_max}}°
+                </td>
+                <td>
+                    {{h.weather.main.feels_like}}°
+                </td>
+                <td>
+                    <button (click)="searchAgain(h.weather.name)">Rechercher</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</main>
+<h2 id='p-history-empty' *ngIf="histories.length === 0">Aucun historique</h2>

@@ -1,0 +1,46 @@
+.text-center {
+    text-align: center;
+}
+
+.ville{
+    font-size: 50px;
+}
+
+.temps{
+    margin-top:-20px ;
+    font-size: 24px;
+    margin-bottom: -10px;
+    
+}
+
+.icone-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.temperature{
+    font-size: 60px;
+    margin-top:-10px;
+}
+
+.previsions {
+    margin-bottom: 20px;
+}
+
+.ressenti{
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.cadre{
+    background: rgba(0, 0, 0, 0.365);
+    color: white;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 3%;
+    padding-top: 2%;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
